@@ -2,13 +2,17 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const lyricsFinder = require("lyrics-finder");
 const SpotifyWebApi = require("spotify-web-api-node");
+const { spotifyApi } = require("react-spotify-web-playback");
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/", async (req, res) => {
+  res.json("Welcome to bekkify backend");
+});
 
 app.post("/refresh", (req, res) => {
   const refreshToken = req.body.refreshToken;
@@ -55,11 +59,8 @@ app.post("/login", (req, res) => {
     });
 });
 
-app.get("/lyrics", async (req, res) => {
-  const lyrics =
-    (await lyricsFinder(req.query.artist, req.query.track)) ||
-    "No Lyrics Found";
-  res.json({ lyrics });
+app.get("/queue", async (req, res) => {
+  spotifyApi.checkTracksStatus(token);
 });
 
 app.listen(3001);

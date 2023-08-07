@@ -1,5 +1,5 @@
 "use client";
-import Dashboard from "./Dashboard";
+import { Dashboard } from "./Dashboard";
 import Login from "./Login";
 import styles from "./page.module.css";
 
