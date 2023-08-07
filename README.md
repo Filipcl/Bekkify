@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+Kjør frontend:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+i root
+
+Kjør backend:
+
+```bash
+cd server
+npm run devStart
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Åpne [http://localhost:3000](http://localhost:3000).
+- Logger inn med min spotify konto
+- Legg til sanger i køen
+- Spiller av automatisk
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## To-do
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Start med å lage en side der man kan søke opp sanger. 
+- Implementer en firebase (firestore) dokument DB for å lagre track-uri og en teller som sier noe om antall likes
+- Vis spillelisten under søket, men sortering på antall likes
+- Implementer en private route med react router eller i next som viser spilleliste og muligjør sletting av sanger. 
 
-## Learn More
+Nice to have: 
+- Implementere et køsystem som legger til en sang i en datastruktur (Se WIP branchen)
+- Hindre siden i å rerendre når en sang blir lagt til , vi må brått ha spillelisten i firestore med en GET og PUT til backend for så å vise i frontend. 
 
-To learn more about Next.js, take a look at the following resources:
+Teknologier: Firebase?, ReactQuery/TanStack? 
+***Har man innspill og teknologi valg legg til under denne bolken.***
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
