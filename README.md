@@ -13,8 +13,11 @@ Kjør backend:
 cd server
 npm run devStart
 ```
-
-Man trenger også .env variabler - send meg en melding på slack.
+**Note:**
+Man trenger også
+ - Miljø variabler fra .env.
+ - Tilgang til spotify dev appen.
+*Send meg en melding på slack.*
 
 - Åpne [http://localhost:3000](http://localhost:3000).
 - Logger inn med min spotify konto
